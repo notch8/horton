@@ -40,3 +40,10 @@ class MockFile
     self.to_s = string
   end
 end
+
+class FakeTCPSocket
+  def initialize(host, port, socket_opts = {})
+    status, error = host.split(".")
+    raise Object.const_get(error) if status == "fail"
+  end
+end

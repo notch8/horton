@@ -51,7 +51,7 @@ class User < ApplicationRecord
   end
 
   def self.in_admin_group?(uid)
-    return false unless uid != 'test_user'
+    # return false unless uid != 'test_user'
     lookup_group(uid, ldap_admin_group) == uid ? true : false
   end
 
@@ -72,7 +72,7 @@ class User < ApplicationRecord
     ldap_response(ldap)
     result
   end
-
+  
   def self.ldap_connection
     @ldap_conn ||= Net::LDAP.new(ldap_connection_config)
   end

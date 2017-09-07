@@ -28,6 +28,8 @@ require 'support/features'
 require 'support/factory_helpers'
 require 'byebug' unless ENV['TRAVIS']
 require 'database_cleaner'
+require 'net/ldap'
+require 'fakeldap'
 
 Capybara.default_driver = :rack_test      # This is a faster driver
 Capybara.javascript_driver = :poltergeist # This is slower
